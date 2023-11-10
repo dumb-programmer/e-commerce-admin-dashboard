@@ -1,18 +1,26 @@
 import { NavLink, Outlet } from "react-router-dom";
-import logo from "../../public/logo.svg";
+import logo from "../assets/logo.svg";
 import "../styles/DashboardLayout.css";
+import {
+  BuildingStorefrontIcon,
+  DocumentPlusIcon,
+  HomeIcon,
+} from "@heroicons/react/24/outline";
 
 const navigation = [
   {
     label: "Revenue",
+    icon: <HomeIcon height={25} width={25} />,
     href: "/",
   },
   {
     label: "Inventory",
+    icon: <BuildingStorefrontIcon height={25} width={25} />,
     href: "/inventory",
   },
   {
     label: "Product Registration",
+    icon: <DocumentPlusIcon height={25} width={25} />,
     href: "/register-product",
   },
 ];
@@ -22,14 +30,16 @@ const DashboardLayout = () => {
     <div className="dashboard-layout">
       <aside className="nav-sidebar">
         <div className="logo">
-          <img src={logo} alt="logo" height={50} width={50}/>
+          <img src={logo} alt="logo" height={50} width={50} />
           <h1>Dashboard</h1>
         </div>
         <nav>
           <ul>
             {navigation.map((link, index) => (
               <li key={index}>
-                <NavLink to={link.href}>{link.label}</NavLink>
+                <NavLink to={link.href}>
+                  {link.icon} {link.label}
+                </NavLink>
               </li>
             ))}
           </ul>

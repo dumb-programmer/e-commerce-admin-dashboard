@@ -12,6 +12,8 @@
 .nav-sidebar {
   position: relative;
   padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .nav-sidebar .logo {
@@ -25,14 +27,17 @@
 }
 
 .nav-sidebar ul li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   color: black;
   text-decoration: none;
   border-radius: 13px;
 }
 
-.nav-sidebar ul li a, .nav-sidebar .logo{
-    padding: 10px 40px;
+.nav-sidebar ul li a,
+.nav-sidebar .logo {
+  padding: 10px 40px;
 }
 
 .nav-sidebar .active {
