@@ -22,7 +22,7 @@ const InventoryManagement = () => {
       <h1 style={{ marginBottom: 10 }}>Inventory Management</h1>
       <section
         className="ag-theme-alpine"
-        style={{ height: "95%", width: "100%" }}
+        style={{ height: "85%", width: "100%" }}
       >
         {/* List view of all products with current inventory status, with options to sort, filter and search products, funtionality to update inventory levels */}
         <AgGridReact
@@ -30,20 +30,17 @@ const InventoryManagement = () => {
             {
               headerName: "Image",
               field: "image",
-              flex: 1,
               cellRenderer: Image,
             },
             {
               headerName: "Name",
               field: "name",
-              flex: 1,
               filter: true,
               sortable: true,
             },
             {
               headerName: "Stock",
               field: "stock",
-              flex: 1,
               filter: true,
               sortable: true,
             },

@@ -1,0 +1,28 @@
+.toggle-group {
+  padding: 10px;
+}
+
+.toggle-group input[type="radio"] {
+  appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toggle-group label {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin: 0px 10px;
+  background-color: rgb(209, 209, 209);
+}
+
+.toggle-group label:hover:not(label.active) {
+  background-color: grey;
+}
+
+.toggle-group label.active {
+  background-color: black;
+  color: white;
+}
