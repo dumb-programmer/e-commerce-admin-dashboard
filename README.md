@@ -19,4 +19,4 @@
    The application facilitates intuitive navigation, the user can click on the sidebar links to navigate to the corresponding pages.
    <img src="https://github.com/dumb-programmer/e-commerce-admin-dashboard/blob/main/screenshot.png" alt="e-commerce dashboard screenshot" />
 # Links
-- Live: <a href="https://willowy-piroshki-eae231.netlify.app/"></a>
+- Live: <a href="https://willowy-piroshki-eae231.netlify.app/">https://willowy-piroshki-eae231.netlify.app/</a>
