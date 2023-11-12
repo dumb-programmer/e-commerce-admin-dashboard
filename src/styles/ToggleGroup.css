@@ -1,4 +1,7 @@
 .toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 10px;
 }
 
@@ -14,7 +17,6 @@
   border-radius: 5px;
   font-size: 0.8rem;
   cursor: pointer;
-  margin: 0px 10px;
   background-color: rgb(209, 209, 209);
 }
 

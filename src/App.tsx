@@ -5,19 +5,22 @@ import InventoryManagement from "./views/InventoryManagement";
 import NotFound from "./views/NotFound";
 import "./styles/App.css";
 import DashboardLayout from "./layouts/DashboardLayout";
+import InventoryDataProvider from "./components/InventoryDataProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<RevenueAnalysis />} />
-          <Route path="/register-product" element={<RegisterProduct />} />
-          <Route path="/inventory" element={<InventoryManagement />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <InventoryDataProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<RevenueAnalysis />} />
+            <Route path="/register-product" element={<RegisterProduct />} />
+            <Route path="/inventory" element={<InventoryManagement />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </InventoryDataProvider>
   );
 }
 

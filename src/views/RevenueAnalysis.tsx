@@ -33,7 +33,7 @@ const RevenueAnalysis = () => {
             }}
           >
             <h3>Total Sales</h3>
-            <p>200,000$</p>
+            <p>$200,000</p>
           </div>
         </Card>
       </section>

@@ -1,22 +1,13 @@
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { AgGridReact } from "ag-grid-react";
-import { faker } from "@faker-js/faker";
+import useInventoryDataContext from "../hooks/useInventoryDataContext";
 
-const rows = Array.from({ length: 100 }).map(() => ({
-  image: faker.image.urlPicsumPhotos({
-    height: 90,
-    width: 320,
-  }),
-  name: faker.commerce.productName(),
-  stock: faker.number.int({ min: 0, max: 100 }),
-}));
-
-const Image = ({ value }: { value: string }) => (
-  <img src={value} />
-);
+const Image = ({ value }: { value: string }) => <img src={value} />;
 
 const InventoryManagement = () => {
+  const { inventory } = useInventoryDataContext();
+
   return (
     <div style={{ height: "100%" }}>
       <h1 style={{ marginBottom: 10 }}>Inventory Management</h1>
@@ -45,7 +36,7 @@ const InventoryManagement = () => {
               sortable: true,
             },
           ]}
-          rowData={rows}
+          rowData={inventory}
           animateRows={true} // Optional - set to 'true' to have rows animate when sorted
         />
       </section>
