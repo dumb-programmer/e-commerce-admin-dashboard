@@ -9,16 +9,12 @@ import {
   Tooltip,
   Rectangle,
 } from "recharts";
-import generateSampleData from "../utils/generateSampleData";
+import { generateSalesSampleData } from "../utils/generateSampleData";
 import ChartPeriodToggle from "./ChartPeriodToggle";
 import { useSearchParams } from "react-router-dom";
+import validateSearchParamsTimePeriod from "../utils/validateSearchParamsTimePeriod";
 
-const datasetsByTimePeriod = generateSampleData("sales");
-
-const TIME_PERIODS = ["daily", "weekly", "monthly", "yearly"];
-const validateSearchParamsTimePeriod = (value: string | null) => {
-  return (value && TIME_PERIODS.includes(value) && value) || "yearly";
-};
+const datasetsByTimePeriod = generateSalesSampleData();
 
 const SalesChart = () => {
   const params = useSearchParams();

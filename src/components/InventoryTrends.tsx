@@ -11,14 +11,10 @@ import {
 } from "recharts";
 import ChartPeriodToggle from "./ChartPeriodToggle";
 import { useSearchParams } from "react-router-dom";
-import generateSampleData from "../utils/generateSampleData";
+import { generateInventorySampleData } from "../utils/generateSampleData";
+import validateSearchParamsTimePeriod from "../utils/validateSearchParamsTimePeriod";
 
-const datasetsByTimePeriod = generateSampleData("inventory");
-
-const TIME_PERIODS = ["daily", "weekly", "monthly", "yearly"];
-const validateSearchParamsTimePeriod = (value: string | null) => {
-  return (value && TIME_PERIODS.includes(value) && value) || "yearly";
-};
+const datasetsByTimePeriod = generateInventorySampleData();
 
 const InventoryTrends = () => {
   const params = useSearchParams();

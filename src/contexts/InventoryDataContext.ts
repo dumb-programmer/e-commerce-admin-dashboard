@@ -1,6 +1,23 @@
 import { createContext } from "react";
-import inventoryData from "../constants/inventoryData";
 
-const InventoryDataContext = createContext(inventoryData);
+interface Inventory {
+  name: string;
+  image: string;
+  stock: number;
+}
+interface InventoryDataContext {
+  inventory: Inventory[];
+  setInventory: React.Dispatch<
+    React.SetStateAction<
+      {
+        image: string;
+        name: string;
+        stock: number;
+      }[]
+    >
+  >;
+}
+
+const InventoryDataContext = createContext<InventoryDataContext | null>(null);
 
 export default InventoryDataContext;

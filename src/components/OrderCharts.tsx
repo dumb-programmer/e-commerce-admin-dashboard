@@ -11,14 +11,10 @@ import {
   Legend,
   Rectangle,
 } from "recharts";
-import generateSampleData from "../utils/generateSampleData";
+import { generateOrdersSampleData } from "../utils/generateSampleData";
+import validateSearchParamsTimePeriod from "../utils/validateSearchParamsTimePeriod";
 
-const datasetsByTimePeriod = generateSampleData("orders");
-
-const TIME_PERIODS = ["daily", "weekly", "monthly", "yearly"];
-const validateSearchParamsTimePeriod = (value: string | null) => {
-  return (value && TIME_PERIODS.includes(value) && value) || "yearly";
-};
+const datasetsByTimePeriod = generateOrdersSampleData();
 
 const OrderCharts = () => {
   const params = useSearchParams();
