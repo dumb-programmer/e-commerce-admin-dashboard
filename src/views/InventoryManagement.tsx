@@ -1,9 +1,16 @@
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css";
 import { AgGridReact } from "ag-grid-react";
 import useInventoryDataContext from "../hooks/useInventoryDataContext";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
 
-const Image = ({ value }: { value: string }) => <img src={value} />;
+const Image = ({ value }: { value: string }) => (
+  <img
+    src={value}
+    height={"100%"}
+    width={"100%"}
+    style={{ objectFit: "cover" }}
+  />
+);
 
 const InventoryManagement = () => {
   const inventoryContext = useInventoryDataContext();
@@ -30,14 +37,45 @@ const InventoryManagement = () => {
               sortable: true,
             },
             {
+              headerName: "Description",
+              field: "description",
+              filter: true,
+            },
+            {
               headerName: "Stock",
               field: "stock",
+              filter: true,
+              editable: true,
+              sortable: true,
+            },
+            {
+              headerName: "Price",
+              field: "price",
               filter: true,
               sortable: true,
             },
           ]}
+          rowHeight={200}
+          getRowClass={({ data }) => {
+            return (data?.stock && data?.stock < 40 && "highlight-red") || "";
+          }}
+          onCellValueChanged={(e) => {
+            if (inventoryContext?.setInventory) {
+              inventoryContext?.setInventory((inventory) => {
+                const newInventory = [];
+                for (const inventoryItem of inventory) {
+                  if (inventoryItem.id === e.data.id) {
+                    newInventory.push(e.data);
+                  } else {
+                    newInventory.push(inventoryItem);
+                  }
+                }
+                return newInventory;
+              });
+            }
+          }}
           rowData={inventoryContext?.inventory}
-          animateRows={true} // Optional - set to 'true' to have rows animate when sorted
+          animateRows={true}
         />
       </section>
       <section>
