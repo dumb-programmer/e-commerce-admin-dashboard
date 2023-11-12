@@ -2,9 +2,9 @@
 
 # Setup
    After cloning the repository install the dependencies by running
-```bash
+   ```bash
    $ npm install
-```
+   ```
    In order to start the local server run
    ```bash
    $ npm run dev
