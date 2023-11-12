@@ -6,7 +6,7 @@ import useInventoryDataContext from "../hooks/useInventoryDataContext";
 const Image = ({ value }: { value: string }) => <img src={value} />;
 
 const InventoryManagement = () => {
-  const { inventory } = useInventoryDataContext();
+  const inventoryContext = useInventoryDataContext();
 
   return (
     <div style={{ height: "100%" }}>
@@ -36,7 +36,7 @@ const InventoryManagement = () => {
               sortable: true,
             },
           ]}
-          rowData={inventory}
+          rowData={inventoryContext?.inventory}
           animateRows={true} // Optional - set to 'true' to have rows animate when sorted
         />
       </section>
