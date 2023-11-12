@@ -29,7 +29,7 @@ const RegisterProduct = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inventoryDataContext?.setInventory) {
       inventoryDataContext.setInventory((inventory) => [

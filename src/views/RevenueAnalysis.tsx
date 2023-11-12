@@ -1,8 +1,9 @@
-import Card from "../components/Card";
 import RevenueDataTable from "../components/RevenueDataTable";
 import OrderCharts from "../components/OrderCharts";
 import SalesChart from "../components/SalesChart";
 import InventoryTrends from "../components/InventoryTrends";
+import InformationalCards from "../components/InformationalCards";
+import RevenueTrends from "../components/RevenueTrends";
 import "../styles/RevenueAnalysis.css";
 
 const RevenueAnalysis = () => {
@@ -10,32 +11,7 @@ const RevenueAnalysis = () => {
     <div>
       <h1>Revenue Analysis</h1>
       <section style={{ display: "flex", gap: "1rem" }}>
-        <Card>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "1rem",
-            }}
-          >
-            <h3>Total Orders</h3>
-            <p>100</p>
-          </div>
-        </Card>
-        <Card>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "1rem",
-            }}
-          >
-            <h3>Total Sales</h3>
-            <p>$200,000</p>
-          </div>
-        </Card>
+        <InformationalCards />
       </section>
       <section>
         <OrderCharts />
@@ -47,7 +23,8 @@ const RevenueAnalysis = () => {
         <RevenueDataTable />
       </section>
       <section>
-        <h2>Revenue Trends and Comparisons Chart</h2>
+        <h2>Revenue Trends</h2>
+        <RevenueTrends />
       </section>
     </div>
   );
